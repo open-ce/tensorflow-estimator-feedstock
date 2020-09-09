@@ -1,0 +1,44 @@
+# tensorflow-estimator meta data file
+{% set name = "tensorflow-estimator" %}
+{% set version = "2.3.0" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/tensorflow/estimator.git
+  git_rev: v{{ version }}
+ 
+build:
+  number: 1
+  noarch: python
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - bazel {{ bazel }}
+  host:
+    - python
+    - tensorflow-base {{ tensorflow }}
+  run:
+    - python
+    - tensorflow-base {{ tensorflow }}
+    
+test:
+  imports:
+    - tensorflow_estimator
+
+about:
+  home: https://www.tensorflow.org/guide/estimators
+  license: Apache 2.0
+  license_family: Apache
+  summary: TensorFlow Estimator
+  description: |
+    TensorFlow Estimator is a high-level API that encapsulates model
+    training, evaluation, prediction, and exporting.
+  dev_url: https://github.com/tensorflow/estimator
+
+extra:
+  recipe-maintainers:
+    - open-ce/open-ce-dev-team
