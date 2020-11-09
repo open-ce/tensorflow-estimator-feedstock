@@ -21,12 +21,14 @@ requirements:
   host:
     - python
     - tensorflow-base {{ tensorflow }}
-    - typing_extensions
+    - typing               # [py>=38]
+    - typing_extensions    # [py<38]
     - python-flatbuffers
   run:
     - python
     - tensorflow-base {{ tensorflow }}
-    - typing_extensions
+    - typing               # [py>=38]
+    - typing_extensions    # [py<38
     - python-flatbuffers
     
 test:
