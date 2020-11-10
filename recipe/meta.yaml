@@ -29,7 +29,7 @@ requirements:
     - tensorflow-base {{ tensorflow }}
     - typing {{ typing }}  # [py>=38]
     - typing_extensions {{ typing }}  # [py<38]
-    - python-flatbuffers {{ flatuffers }}
+    - python-flatbuffers {{ flatbuffers }}
     
 test:
   imports:
