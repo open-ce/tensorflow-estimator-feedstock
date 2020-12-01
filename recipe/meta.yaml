@@ -1,6 +1,6 @@
 # tensorflow-estimator meta data file
 {% set name = "tensorflow-estimator" %}
-{% set version = "2.4" %}
+{% set version = "2.4.0-rc0" %}
 
 package:
   name: {{ name }}
