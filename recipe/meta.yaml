@@ -1,15 +1,14 @@
 # tensorflow-estimator meta data file
 {% set name = "tensorflow-estimator" %}
-{% set version = "2.4.0-rc0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name }}
-  version: 2.4.0
-#  version: {{ version }}
+  version: {{ version }}
 
 source:
   git_url: https://github.com/tensorflow/estimator.git
-  git_rev: r{{ version }}
+  git_rev: v{{ version }}-rc0
  
 build:
   number: 1
