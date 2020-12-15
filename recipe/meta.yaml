@@ -1,6 +1,6 @@
 # tensorflow-estimator meta data file
 {% set name = "tensorflow-estimator" %}
-{% set version = "2.3.0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name }}
@@ -21,9 +21,13 @@ requirements:
   host:
     - python
     - tensorflow-base {{ tensorflow }}
+    - typing_extensions {{ typing_extensions }}  # [py<38]
+    - python-flatbuffers {{ flatbuffers }}
   run:
     - python
     - tensorflow-base {{ tensorflow }}
+    - typing_extensions {{ typing_extensions }}  # [py<38]
+    - python-flatbuffers {{ flatbuffers }}
     
 test:
   imports:
