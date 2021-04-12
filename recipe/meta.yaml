@@ -11,7 +11,7 @@ source:
   git_rev: v{{ version }}
  
 build:
-  number: 2
+  number: 3
   noarch: python
 
 requirements:
@@ -21,12 +21,12 @@ requirements:
   host:
     - python
     - tensorflow-base {{ tensorflow }}
-    - typing_extensions {{ typing_extensions }}  # [py<38]
+    - typing_extensions {{ typing_extensions }}
     - python-flatbuffers {{ flatbuffers }}
   run:
     - python
     - tensorflow-base {{ tensorflow }}
-    - typing_extensions {{ typing_extensions }}  # [py<38]
+    - typing_extensions {{ typing_extensions }}
     - python-flatbuffers {{ flatbuffers }}
     
 test:
