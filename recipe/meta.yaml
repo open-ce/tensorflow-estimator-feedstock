@@ -11,7 +11,8 @@ source:
   git_rev: v{{ version }}
  
 build:
-  number: 3
+  number: 4
+  string: py_{{ PKG_BUILDNUM }}
   noarch: python
 
 requirements:
