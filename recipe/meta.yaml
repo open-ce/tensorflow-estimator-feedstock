@@ -11,19 +11,25 @@ source:
   git_rev: v{{ version }}
  
 build:
-  number: 4
+  number: 5
   string: py_{{ PKG_BUILDNUM }}
   noarch: python
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
     - bazel {{ bazel }}
   host:
     - python
     - tensorflow-base {{ tensorflow }}
     - typing_extensions {{ typing_extensions }}
     - python-flatbuffers {{ flatbuffers }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
   run:
     - python
     - tensorflow-base {{ tensorflow }}
