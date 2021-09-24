@@ -12,7 +12,7 @@ source:
  
 build:
   number: 2
-  string: pyh{{ PKG_HASH }_{{ PKG_BUILDNUM }}
+  string: pyh{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
   noarch: python
 
 requirements:
