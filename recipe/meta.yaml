@@ -17,7 +17,7 @@ build:
 
 requirements:
   build:
-    - {{ compiler('cxx') }}     #[ppc_arch != "p10"]
+    - {{ compiler('cxx') }}
     - bazel {{ bazel }}
   host:
     - python
