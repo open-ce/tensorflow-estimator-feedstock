@@ -17,6 +17,8 @@
 
 set -ex
 
+source open-ce-common-utils.sh
+
 bazel build //tensorflow_estimator/tools/pip_package:build_pip_package
 # build a whl file
 mkdir -p $SRC_DIR/tensorflow_estimator_pkg
@@ -25,5 +27,6 @@ bazel-bin/tensorflow_estimator/tools/pip_package/build_pip_package $SRC_DIR/tens
 # install using pip from the whl file
 pip install --no-deps $SRC_DIR/tensorflow_estimator_pkg/*.whl
 
-bazel clean --expunge
-bazel shutdown
+PID=$(bazel info server_pid)
+echo "PID: $PID"
+cleanup_bazel $PID
