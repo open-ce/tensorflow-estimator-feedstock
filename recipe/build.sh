@@ -1,6 +1,6 @@
 #!/bin/bash
 # *****************************************************************
-# (C) Copyright IBM Corp. 2018, 2021. All Rights Reserved.
+# (C) Copyright IBM Corp. 2018, 2023. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 # *****************************************************************
 
 set -ex
+source open-ce-common-utils.sh
 
 bazel build //tensorflow_estimator/tools/pip_package:build_pip_package
 # build a whl file
@@ -25,5 +26,6 @@ bazel-bin/tensorflow_estimator/tools/pip_package/build_pip_package $SRC_DIR/tens
 # install using pip from the whl file
 pip install --no-deps $SRC_DIR/tensorflow_estimator_pkg/*.whl
 
-bazel clean --expunge
-bazel shutdown
+PID=$(bazel info server_pid)
+echo "PID: $PID"
+cleanup_bazel $PID
