@@ -25,14 +25,14 @@ requirements:
     - typing_extensions {{ typing_extensions }}
     - python-flatbuffers {{ flatbuffers }}
     - keras {{ keras }}
-    - ml_dtypes
+    - ml_dtypes {{ ml_dtypes }}
   run:
     - python
     - tensorflow-base {{ tensorflow }}
     - typing_extensions {{ typing_extensions }}
     - python-flatbuffers {{ flatbuffers }}
     - keras {{ keras }}
-    - ml_dtypes
+    - ml_dtypes {{ ml_dtypes }}
     
 test:
   imports:
